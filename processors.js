@@ -1,4 +1,4 @@
-class MyWorkletProcessor extends AudioWorkletProcessor {
+class DetectVolumeProcessor extends AudioWorkletProcessor {
   volume = 0;
   averaging = 0.95;
   pause = false;
@@ -55,4 +55,4 @@ class MyWorkletProcessor extends AudioWorkletProcessor {
 
 }
 
-registerProcessor('detect-volume', MyWorkletProcessor);
+registerProcessor('detect-volume', DetectVolumeProcessor);
