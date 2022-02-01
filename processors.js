@@ -16,7 +16,6 @@ class MyWorkletProcessor extends AudioWorkletProcessor {
     super();
 
     this.port.onmessage = (event) => {
-      console.log(event.data);
       if (event.data === 'pause') {
         this.pause = true;
       }
@@ -48,7 +47,6 @@ class MyWorkletProcessor extends AudioWorkletProcessor {
       }
   
       const rms = Math.sqrt(sum / bufLength);
-      console.log(paramaters);
       this.volume = Math.max(rms, this.volume * this.averaging);
       this.port.postMessage(this.volume);
     }
